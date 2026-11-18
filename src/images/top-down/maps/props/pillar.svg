@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="128" viewBox="0 0 64 128"><defs><radialGradient id="r1" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#000000" stop-opacity="0.42"/><stop offset="0.55" stop-color="#000000" stop-opacity="0.32"/><stop offset="1" stop-color="#000000" stop-opacity="0"/></radialGradient><linearGradient id="g2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a4a8ac"/><stop offset="0.22" stop-color="#c3c6c9"/><stop offset="0.5" stop-color="#a4a8ac"/><stop offset="1" stop-color="#80858a"/></linearGradient><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c3c6c9"/><stop offset="1" stop-color="#a4a8ac"/></linearGradient><linearGradient id="g4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9a9fa4"/><stop offset="1" stop-color="#787d82"/></linearGradient><linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000000" stop-opacity="0.22"/><stop offset="1" stop-color="#000000" stop-opacity="0"/></linearGradient><clipPath id="c6"><path d="M15 30 L49 30 L49 101.5 Q32 106.5 15 101.5 Z" clip-rule="nonzero"/></clipPath></defs>
+<ellipse cx="32" cy="122.5" rx="31" ry="5" fill="url(#r1)"/>
+<g fill="#2b2e33" stroke="#2b2e33" stroke-width="3" stroke-linejoin="round"><path d="M8 106 L56 106 L56 123 Q56 125 54 125 L10 125 Q8 125 8 123 Z"/><path d="M8 106 L14 99 L50 99 L56 106 Z"/><path d="M15 30 L49 30 L49 101.5 Q32 106.5 15 101.5 Z"/><path d="M9 22 L55 22 L55 31 Q32 36 9 31 Z"/><path d="M9 22 Q9 14 32 14 Q55 14 55 22 Q55 28 32 28 Q9 28 9 22 Z"/></g>
+<path d="M8 106 L56 106 L56 123 Q56 125 54 125 L10 125 Q8 125 8 123 Z" fill="url(#g4)"/>
+<path d="M8 106 L14 99 L50 99 L56 106 Z" fill="url(#g3)"/>
+<path d="M15 30 L49 30 L49 101.5 Q32 106.5 15 101.5 Z" fill="url(#g2)"/>
+<path d="M9 22 L55 22 L55 31 Q32 36 9 31 Z" fill="url(#g2)"/>
+<path d="M9 22 Q9 14 32 14 Q55 14 55 22 Q55 28 32 28 Q9 28 9 22 Z" fill="url(#g3)"/>
+<path d="M15 101.5 Q32 106.5 49 101.5" fill="none" stroke="#2b2e33" stroke-opacity="0.45" stroke-width="1"/>
+<path d="M9 31 Q32 36 55 31" fill="none" stroke="#2b2e33" stroke-opacity="0.45" stroke-width="1"/>
+<path d="M14 21.5 Q16 17 32 16.6 Q44 16.8 49 19" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.2" stroke-linecap="round"/>
+<g clip-path="url(#c6)"><rect x="15" y="31" width="34" height="7" fill="url(#g5)"/></g>
+<rect x="8" y="106" width="48" height="1" fill="#ffffff" opacity="0.3"/>
+</svg>

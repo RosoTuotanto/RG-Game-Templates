@@ -1,0 +1,32 @@
+{
+	"render": {
+		"supersample": 4,
+		"max_supersampled_side": 8192
+	},
+
+	"bounds": {
+		"timeout_seconds": 120,
+		"memory_cap_mb": 3072,
+		"output_cap_bytes": 1000000,
+		"poll_seconds": 0.2
+	},
+
+	"opaque": [
+		"visual-novel/assets/images/backgrounds/indoor.svg",
+		"visual-novel/assets/images/backgrounds/outdoor.svg"
+	],
+
+	"tilesets": {
+		"platformer/assets/maps/tileset.svg": {
+			"tile_width": 48,
+			"tile_height": 48,
+			"extrude": 2
+		},
+
+		"top-down/maps/tileset.svg": {
+			"tile_width": 64,
+			"tile_height": 64,
+			"extrude": 2
+		}
+	}
+}

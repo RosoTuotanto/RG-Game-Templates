@@ -1,0 +1,19 @@
+[
+	{
+		"title": "variables",
+		"tags": "options",
+		"body": "{ \"parcelGiven\": false }"
+	},
+	{
+		"title": "npc",
+		"body": "<<if $parcelGiven>>\nNPC: Thank you again for the parcel!\n<<elseif $inventory.parcel>>\nNPC: Is that my parcel? You found it!\n\n[[Hand it over|npcParcel]]\n[[Not yet|npcNotYet]]\n<<else>>\nNPC: I'm waiting for a parcel, but it was left on the highest platform outside.\nNPC: Could you fetch it for me?\n<<end>>"
+	},
+	{
+		"title": "npcParcel",
+		"body": "<<removeItem, parcel>>\n<<set $parcelGiven = true>>\nYou: Here you go.\nNPC: Thank you! I've been waiting for this all day."
+	},
+	{
+		"title": "npcNotYet",
+		"body": "You: Not yet. I'll be back.\nNPC: I'll be right here."
+	}
+]

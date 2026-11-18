@@ -1,0 +1,68 @@
+-- Solar2D build configuration.
+-- Reference: https://docs.coronalabs.com/guide/distribution/buildSettings/index.html
+
+settings = -- luacheck: ignore
+{
+	splashScreen =
+	{
+		enable = false
+	},
+
+	orientation =
+	{
+		default = "landscapeRight",
+		supported = { "landscapeRight", "landscapeLeft" },
+	},
+
+	--
+	-- Plugins section
+	--
+	plugins =
+	{
+
+	},
+
+	--
+	-- Build section
+	--
+	build =
+	{
+		-- Keeps debug symbols in the build, so stack traces show real function names and line numbers.
+		-- Read more at https://docs.coronalabs.com/guide/distribution/advancedSettings/index.html#build-control
+		neverStripDebugInfo = true,
+	},
+
+	--
+	-- Project section
+	--
+	win32 =
+	{
+		singleInstance = true,
+	},
+
+	window =
+	{
+		titleText = {
+			default = "Roso Games Template",
+		},
+		defaultMode = "normal", -- "normal", "minimized", "maximized", "fullscreen"
+		defaultViewWidth = 960,
+		defaultViewHeight = 640,
+		resizable = false,
+		minViewWidth = 960,
+		minViewHeight = 640,
+
+		enableCloseButton = true,
+		enableMaximizeButton = false,
+		enableMinimizeButton = true,
+		suspendWhenMinimized = true,
+	},
+
+	excludeFiles =
+	{
+		all = { "LICENSE", ".DS_Store", "Thumbs.db", "*.md", "data/launchParams.json", "data/launchParams.example.json", "assets/fonts/Rubik/OFL.txt", },
+		web = { "Icon*.ico", "Icon*.icns", },
+		win32 = { "Icon*.icns", },
+		macos = { "Icon*.ico", },
+	},
+}

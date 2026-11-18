@@ -1,0 +1,3 @@
+Audio licence for RG CORE.
+
+The menu music (music/menuMusic.mp3) and the UI click sound (sfx/click.wav) were made for the Roso Games templates by Eetu Rantanen and are released under CC0. No attribution is required.

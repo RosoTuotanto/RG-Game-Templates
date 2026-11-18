@@ -1,0 +1,55 @@
+[
+	{
+		"title": "variables",
+		"tags": "options",
+		"body": "{ \"money\": 100, \"targetHits\": 0, \"targetGoalReached\": false }"
+	},
+	{
+		"title": "start",
+		"body": "<<img, \"assets/images/backgrounds/outdoor.png\">>\n<<character, show, template-male>>\nA character enters the scene with a short slide and fade.\n[[Continue|expression]]"
+	},
+	{
+		"title": "expression",
+		"body": "<<character, show, template-male, excited>>\nShowing the same character with another expression swaps the image in place.\n[[Continue|indoors]]"
+	},
+	{
+		"title": "indoors",
+		"body": "<<img, \"assets/images/backgrounds/indoor.png\">>\n<<character, show, template-male, default, left>>\nThe background changes to a second location.\nThe character moves to the left side of the screen.\n[[Continue|secondCharacter]]"
+	},
+	{
+		"title": "secondCharacter",
+		"body": "<<character, show, template-female, default, right>>\nA second character enters. Characters stay on screen until a passage hides them.\nPick a link. Each one leads to its own passage.\n[[The first link|firstChoice]]\n[[The second link|secondChoice]]"
+	},
+	{
+		"title": "firstChoice",
+		"body": "<<character, show, template-male, excited>>\nYou picked the first link. Both links lead on to the same passage.\n[[Continue|badge]]"
+	},
+	{
+		"title": "secondChoice",
+		"body": "<<character, show, template-female, excited>>\nYou picked the second link. Both links lead on to the same passage.\n[[Continue|badge]]"
+	},
+	{
+		"title": "badge",
+		"body": "<<addItem, badge>>\n<<character, show, template-male, default>>\n<<character, show, template-female, excited>>\ntemplate-female gives you a badge. addItem puts it in your inventory: open it with I or the button in the corner.\n[[Continue|badgeLinks]]"
+	},
+	{
+		"title": "badgeLinks",
+		"body": "<<character, show, template-female, default>>\n<<if $inventory.badge>>\nThe next link only shows while the badge is in your inventory.\n[[Give the badge back|giveBadge]]\n<<else>>\nYou gave the badge back, so its link is gone.\n<<end>>\n[[Play the minigame|minigame]]"
+	},
+	{
+		"title": "giveBadge",
+		"body": "<<removeItem, badge>>\nYou give the badge back. removeItem takes it out of your inventory.\n[[Go back|badgeLinks]]"
+	},
+	{
+		"title": "minigame",
+		"body": "A minigame runs inside a passage. Hit as many targets as you can.\n<<minigame, targetPractice>>\nThe round is over.\n[[See the result|result]]"
+	},
+	{
+		"title": "result",
+		"body": "<<if $targetGoalReached == true>>\n<<character, show, template-male, excited>>\n<<money, 50>>\nYou reached the goal with $targetHits hits. The money command pays you $ 50, so watch the money in the corner.\n<<else>>\nYou missed the goal with $targetHits hits.\n<<end>>\nThe passage reads the result from the targetHits and targetGoalReached variables.\n[[Continue|ending]]"
+	},
+	{
+		"title": "ending",
+		"body": "<<character, hide, template-male>>\n<<character, hide, template-female>>\nHiding a character fades it out. This is the end of the showcase.\n[[Start again|start]]"
+	}
+]

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Template Story</title>
+</head>
+<body>
+<tw-storydata name="Template Story" startnode="2" creator="Twine" creator-version="2.12.1" format="Weaver" format-version="2.0.0" ifid="23E10FAB-AF3A-4D78-B751-D2D509BCF222" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="variables" tags="options" position="100,100" size="100,100">{ &quot;parcelGiven&quot;: false }</tw-passagedata><tw-passagedata pid="2" name="npc" tags="" position="300,100" size="100,100">&lt;&lt;if $parcelGiven&gt;&gt;
+NPC: Thank you again for the parcel!
+&lt;&lt;elseif $inventory.parcel&gt;&gt;
+NPC: Is that my parcel? You found it!
+
+[[Hand it over|npcParcel]]
+[[Not yet|npcNotYet]]
+&lt;&lt;else&gt;&gt;
+NPC: I&#x27;m waiting for a parcel, but it was left on the highest platform outside.
+NPC: Could you fetch it for me?
+&lt;&lt;end&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="npcParcel" tags="" position="500,100" size="100,100">&lt;&lt;removeItem, parcel&gt;&gt;
+&lt;&lt;set $parcelGiven = true&gt;&gt;
+You: Here you go.
+NPC: Thank you! I&#x27;ve been waiting for this all day.</tw-passagedata><tw-passagedata pid="4" name="npcNotYet" tags="" position="700,100" size="100,100">You: Not yet. I&#x27;ll be back.
+NPC: I&#x27;ll be right here.</tw-passagedata></tw-storydata>
+</body>
+</html>

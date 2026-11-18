@@ -1,0 +1,379 @@
+{
+	"compressionlevel": -1,
+	"height": 8,
+	"infinite": false,
+	"layers": [
+		{
+			"id": 1,
+			"data": [
+				25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25,
+				25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25,
+				25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25,
+				25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25,
+				25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25,
+				25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25,
+				25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25,
+				25, 25, 25, 25, 25, 28, 25, 25, 25, 25, 25
+			],
+			"height": 8,
+			"name": "floor",
+			"opacity": 1,
+			"type": "tilelayer",
+			"visible": true,
+			"width": 11,
+			"x": 0,
+			"y": 0
+		},
+		{
+			"id": 2,
+			"data": [
+				18, 17, 17, 17, 17, 17, 17, 17, 17, 17, 19,
+				17, 26, 26, 26, 26, 26, 26, 26, 26, 26, 17,
+				17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17,
+				17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17,
+				17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17,
+				17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17,
+				17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17,
+				20, 17, 17, 17, 17, 0, 17, 17, 17, 17, 21
+			],
+			"height": 8,
+			"name": "walls",
+			"opacity": 1,
+			"type": "tilelayer",
+			"visible": true,
+			"width": 11,
+			"x": 0,
+			"y": 0
+		},
+		{
+			"id": 3,
+			"draworder": "topdown",
+			"name": "game",
+			"objects": [
+				{
+					"id": 1,
+					"name": "hero",
+					"type": "hero",
+					"rotation": 0,
+					"visible": true,
+					"gid": 33,
+					"x": 320,
+					"y": 372,
+					"width": 64,
+					"height": 96,
+					"properties": [
+						{
+							"name": "anchorY",
+							"type": "float",
+							"value": 0.875
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "fromOutdoor1",
+					"type": "spawn",
+					"rotation": 0,
+					"visible": false,
+					"x": 320,
+					"y": 328,
+					"width": 64,
+					"height": 64
+				},
+				{
+					"id": 3,
+					"name": "signIndoor1",
+					"type": "sign",
+					"rotation": 0,
+					"visible": true,
+					"gid": 42,
+					"x": 448,
+					"y": 256,
+					"width": 64,
+					"height": 64,
+					"properties": [
+						{
+							"name": "bodyType",
+							"type": "string",
+							"value": "static"
+						},
+						{
+							"name": "node",
+							"type": "string",
+							"value": "signIndoor1"
+						}
+					]
+				},
+				{
+					"id": 4,
+					"name": "pillar",
+					"type": "prop",
+					"rotation": 0,
+					"visible": true,
+					"gid": 40,
+					"x": 192,
+					"y": 320,
+					"width": 64,
+					"height": 128,
+					"properties": [
+						{
+							"name": "anchorY",
+							"type": "float",
+							"value": 1.0
+						}
+					]
+				}
+			],
+			"opacity": 1,
+			"type": "objectgroup",
+			"visible": true,
+			"x": 0,
+			"y": 0
+		},
+		{
+			"id": 4,
+			"draworder": "topdown",
+			"name": "physics",
+			"objects": [
+				{
+					"id": 5,
+					"name": "",
+					"type": "wall",
+					"rotation": 0,
+					"visible": true,
+					"x": 198,
+					"y": 292,
+					"width": 52,
+					"height": 28,
+					"properties": [
+						{
+							"name": "bodyType",
+							"type": "string",
+							"value": "static"
+						}
+					]
+				},
+				{
+					"id": 6,
+					"name": "exitToOutdoor1",
+					"type": "exit",
+					"rotation": 0,
+					"visible": true,
+					"x": 320,
+					"y": 448,
+					"width": 64,
+					"height": 64,
+					"properties": [
+						{
+							"name": "bodyType",
+							"type": "string",
+							"value": "static"
+						},
+						{
+							"name": "isSensor",
+							"type": "bool",
+							"value": true
+						},
+						{
+							"name": "targetMap",
+							"type": "string",
+							"value": "outdoor1"
+						},
+						{
+							"name": "targetSpawn",
+							"type": "string",
+							"value": "fromIndoor1"
+						}
+					]
+				},
+				{
+					"id": 7,
+					"name": "",
+					"type": "wall",
+					"rotation": 0,
+					"visible": true,
+					"x": 0,
+					"y": 0,
+					"width": 704,
+					"height": 128,
+					"properties": [
+						{
+							"name": "bodyType",
+							"type": "string",
+							"value": "static"
+						}
+					]
+				},
+				{
+					"id": 8,
+					"name": "",
+					"type": "wall",
+					"rotation": 0,
+					"visible": true,
+					"x": 0,
+					"y": 128,
+					"width": 64,
+					"height": 320,
+					"properties": [
+						{
+							"name": "bodyType",
+							"type": "string",
+							"value": "static"
+						}
+					]
+				},
+				{
+					"id": 9,
+					"name": "",
+					"type": "wall",
+					"rotation": 0,
+					"visible": true,
+					"x": 640,
+					"y": 128,
+					"width": 64,
+					"height": 320,
+					"properties": [
+						{
+							"name": "bodyType",
+							"type": "string",
+							"value": "static"
+						}
+					]
+				},
+				{
+					"id": 10,
+					"name": "",
+					"type": "wall",
+					"rotation": 0,
+					"visible": true,
+					"x": 0,
+					"y": 448,
+					"width": 320,
+					"height": 64,
+					"properties": [
+						{
+							"name": "bodyType",
+							"type": "string",
+							"value": "static"
+						}
+					]
+				},
+				{
+					"id": 11,
+					"name": "",
+					"type": "wall",
+					"rotation": 0,
+					"visible": true,
+					"x": 384,
+					"y": 448,
+					"width": 320,
+					"height": 64,
+					"properties": [
+						{
+							"name": "bodyType",
+							"type": "string",
+							"value": "static"
+						}
+					]
+				}
+			],
+			"opacity": 1,
+			"type": "objectgroup",
+			"visible": false,
+			"x": 0,
+			"y": 0
+		}
+	],
+	"nextlayerid": 5,
+	"nextobjectid": 12,
+	"orientation": "orthogonal",
+	"renderorder": "right-down",
+	"tiledversion": "1.11.2",
+	"tileheight": 64,
+	"tilesets": [
+		{
+			"columns": 8,
+			"firstgid": 1,
+			"image": "tileset.png",
+			"imagewidth": 544,
+			"imageheight": 272,
+			"margin": 2,
+			"name": "tileset",
+			"spacing": 4,
+			"tilecount": 32,
+			"tileheight": 64,
+			"tilewidth": 64
+		},
+		{
+			"columns": 3,
+			"firstgid": 33,
+			"image": "characters.png",
+			"imagewidth": 192,
+			"imageheight": 96,
+			"margin": 0,
+			"name": "characters",
+			"spacing": 0,
+			"tilecount": 3,
+			"tileheight": 96,
+			"tilewidth": 64
+		},
+		{
+			"columns": 3,
+			"firstgid": 36,
+			"image": "items.png",
+			"imagewidth": 192,
+			"imageheight": 64,
+			"margin": 0,
+			"name": "items",
+			"spacing": 0,
+			"tilecount": 3,
+			"tileheight": 64,
+			"tilewidth": 64
+		},
+		{
+			"columns": 0,
+			"firstgid": 39,
+			"grid": {
+				"height": 1,
+				"orientation": "orthogonal",
+				"width": 1
+			},
+			"margin": 0,
+			"name": "props",
+			"spacing": 0,
+			"tilecount": 4,
+			"tileheight": 160,
+			"tilewidth": 128,
+			"tiles": [
+				{
+					"id": 0,
+					"image": "props/crate.png",
+					"imagewidth": 64,
+					"imageheight": 64
+				},
+				{
+					"id": 1,
+					"image": "props/pillar.png",
+					"imagewidth": 64,
+					"imageheight": 128
+				},
+				{
+					"id": 2,
+					"image": "props/tree.png",
+					"imagewidth": 128,
+					"imageheight": 160
+				},
+				{
+					"id": 3,
+					"image": "props/sign.png",
+					"imagewidth": 64,
+					"imageheight": 64
+				}
+			]
+		}
+	],
+	"tilewidth": 64,
+	"type": "map",
+	"version": "1.10",
+	"width": 11
+}
