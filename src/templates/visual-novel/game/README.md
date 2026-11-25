@@ -9,7 +9,7 @@ The project ships with a short showcase story on grey placeholder art. It shows 
 1. Open the `game/` folder in the Solar2D Simulator.
 2. Press Play in the main menu to start a new game at the `start` passage.
 
-To skip the launch screen and the menu while you work, copy `data/launchParams.example.json` to `data/launchParams.json` and set `debugMode` to `true` and `gotoScene` to `"game"`.
+To skip the launch screen and the menu while you work, set `debugMode` to `true` and `gotoScene` to `"game"` in `data/launchParams.json`, which the Simulator creates the first time you run the game.
 
 ## Controls
 

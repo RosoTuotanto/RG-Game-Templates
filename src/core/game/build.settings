@@ -60,7 +60,7 @@ settings = -- luacheck: ignore
 
 	excludeFiles =
 	{
-		all = { "LICENSE", ".DS_Store", "Thumbs.db", "*.md", "data/launchParams.json", "data/launchParams.example.json", "assets/fonts/Rubik/OFL.txt", "assets/images/template/license.txt", "assets/audio/template/license.txt", "assets/maps/license.txt", "maps/license.txt", },
+		all = { "LICENSE", ".DS_Store", "Thumbs.db", "*.md", "data/launchParams.json", "assets/fonts/Rubik/OFL.txt", "assets/images/template/license.txt", "assets/audio/template/license.txt", "assets/maps/license.txt", "maps/license.txt", },
 		web = { "Icon*.ico", "Icon*.icns", },
 		win32 = { "Icon*.icns", },
 		macos = { "Icon*.ico", },

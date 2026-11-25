@@ -85,7 +85,7 @@ return {
 
 ### data/launchParams.json
 
-Your PERSONAL testing flags. This file is gitignored and excluded from builds: it never affects anyone else, so you can freely set the game to boot straight into a scene you are working on. Copy `data/launchParams.example.json` to `data/launchParams.json` to use it. When the file is missing, safe defaults apply (all flags false, normal boot). A key with an unknown name or a wrong type prints a warning and is ignored.
+Your PERSONAL testing flags. This file is gitignored and excluded from builds: it never affects anyone else, so you can freely set the game to boot straight into a scene you are working on. The Solar2D Simulator creates it with every flag off when the game launches without it. Outside the Simulator a missing file means safe defaults (all flags false, normal boot). A key with an unknown name or a wrong type prints a warning and is ignored.
 
 | Field | Type | Default | Effect |
 | --- | --- | --- | --- |
