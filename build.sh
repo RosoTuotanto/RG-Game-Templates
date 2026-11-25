@@ -13,6 +13,9 @@ build() {
 	cp -R src/core/game/. "$target/game/"
 	cp -R "$template/game/." "$target/game/"
 
+	# A developer's launchParams.json holds personal testing flags, so it never goes into a build.
+	rm -f "$target/game/data/launchParams.json"
+
 	cp -R src/core/developmentFiles/. "$target/developmentFiles/"
 
 	if [ -d "$template/developmentFiles" ]; then

@@ -22,40 +22,39 @@ Projekti kestää lokakuusta toukokuuhun. Osallistujat käyvät ensin kurssit [o
 
 Mikään template ei ole valmis peli. Jokaisessa on pieni esimerkkisisältö harmailla placeholder-grafiikoilla. Ryhmä vaihtaa sen tilalle oman sisältönsä.
 
-Buildatussa projektissa on templaten lisäksi aina mukana core. Templaten oma `README.md` on ohje, joka tulee buildatun projektin mukana.
+Buildatussa templatessa on templaten lisäksi aina mukana core. Templaten oma `README.md` on ohje, joka tulee buildatun templaten mukana.
 
 ## Käyttö
 
-### Projektin buildaaminen
+### Templatejen buildaaminen
 
 1. Aja `build.bat` (Windows) tai `sh build.sh` (macOS ja Linux).
 2. Valitse numerolla, mitä buildataan: `1` kaikki templatet, `2` visual-novel, `3` platformer tai `4` top-down. `build.bat` reagoi heti näppäimen painallukseen. `build.sh`:ssa paina numeron jälkeen Enter.
-3. Skripti poistaa ensin vanhan `dst/<template>/`-kansion ja tekee tilalle kaksi kansiota. `game/`-kansioon se kopioi coren `game/`-kansion sisällön ja sen päälle templaten `game/`-kansion sisällön. `developmentFiles/`-kansioon se kopioi coren ja templaten `developmentFiles/`-kansioiden sisällön.
+3. Skripti poistaa ensin vanhan `dst/<template>/`-kansion kokonaan ja tekee tilalle kaksi tyhjää kansiota. `game/`-kansioon se kopioi coren `game/`-kansion sisällön ja sen päälle templaten `game/`-kansion sisällön. `developmentFiles/`-kansioon se kopioi coren ja templaten `developmentFiles/`-kansioiden sisällön. Omaa `data/launchParams.json`-tiedostoasi se ei kopioi.
 4. Valikko palaa jokaisen buildin jälkeen. Buildaa lisää tai sulje skripti valitsemalla `5`.
-5. Avaa `dst/<template>/game/main.lua` Solar2D-simulaattorissa, niin projekti käynnistyy.
+5. Avaa `dst/<template>/game/main.lua` Solar2D-simulaattorissa, niin template käynnistyy.
 
-### Projektin antaminen ryhmälle
+### Templaten antaminen ryhmälle
 
-1. Buildaa ryhmän valitsema template.
-2. Poista tiedosto `dst/<template>/game/data/launchParams.json`, jos se on olemassa. Siinä ovat omat testausasetuksesi. Build kopioi sen mukaan samalla tavalla kuin muutkin tiedostot.
-3. Kopioi `dst/<template>/game/`-kansion sisältö ryhmän repositorion `game`-kansioon. Templaten `README.md` korvaa kansiossa valmiina olevan [RG-Project-Templaten](https://github.com/RosoTuotanto/RG-Project-Template) `README.md`-tiedoston.
-4. Kopioi `dst/<template>/developmentFiles/`-kansion sisältö ryhmän repositorion `developmentFiles`-kansioon. Uudet tiedostot ja kansiot tulevat valmiina olevien rinnalle, eikä mikään valmiina oleva tiedosto korvaudu.
+1. Buildaa ryhmän valitsema template, niin ryhmä saa siitä ajan tasalla olevan buildin.
+2. Kopioi `dst/<template>/game/`-kansion sisältö ryhmän repositorion `game`-kansioon. Templaten `README.md` korvaa kansiossa valmiina olevan [RG-Project-Templaten](https://github.com/RosoTuotanto/RG-Project-Template) `README.md`-tiedoston.
+3. Kopioi `dst/<template>/developmentFiles/`-kansion sisältö ryhmän repositorion `developmentFiles`-kansioon. Uudet tiedostot ja kansiot tulevat valmiina olevien rinnalle, eikä mikään valmiina oleva tiedosto korvaudu.
 
-Tämän jälkeen ryhmän projekti on itsenäinen: tähän repositorioon tehty korjaus ei päivity ryhmän peliin.
+Tämän jälkeen ryhmän peli on itsenäinen: tähän repositorioon tehty korjaus ei päivity siihen.
 
 ### Coren tai templaten muokkaaminen
 
-Tee muutokset aina `src/`-kansioon. `dst/`-kansioon tehdyt muutokset katoavat seuraavassa buildissa.
+Tee muutokset aina `src/`-kansioon ja buildaa sen jälkeen kaikki templatet, jotta `dst/`-kansion buildit ovat ajan tasalla. `dst/`-kansioon tehdyt muutokset katoavat seuraavassa buildissa.
 
 ## Rakenne
 
 - [`src/core/game/`](src/core/game/README.md) sisältää coren (RG CORE): kokonaisen Solar2D-projektin, jonka voi ajaa sellaisenaan. Siinä ovat valmiina kaikkien templatejen käyttöön muun muassa päävalikko, asetukset, save slotit, taustamusiikki, kontrollit, inventory, Story Weaver -tarinaan perustuvat keskustelut ja näppäinohje. Sen `scenes/game.lua` on tyhjä pohja, jonka jokainen template korvaa omallaan.
 - `src/core/developmentFiles/` sisältää coren moduulien dokumentaation (`docs/`).
-- Templatet ovat kansioissa `src/templates/<nimi>/`: [`visual-novel`](src/templates/visual-novel/game/README.md), [`platformer`](src/templates/platformer/game/README.md) ja [`top-down`](src/templates/top-down/game/README.md). Jokainen template on jaettu samalla tavalla: projektin tiedostot ovat `game/`-kansiossa ja moduulien dokumentaatio `developmentFiles/docs/`-kansiossa. Jokaisessa templatessa on lisäksi Twine-tarinatiedosto `developmentFiles/story/`-kansiossa.
+- Templatet ovat kansioissa `src/templates/<nimi>/`: [`visual-novel`](src/templates/visual-novel/game/README.md), [`platformer`](src/templates/platformer/game/README.md) ja [`top-down`](src/templates/top-down/game/README.md). Jokainen template on jaettu samalla tavalla: templaten tiedostot ovat `game/`-kansiossa ja moduulien dokumentaatio `developmentFiles/docs/`-kansiossa. Jokaisessa templatessa on lisäksi Twine-tarinatiedosto `developmentFiles/story/`-kansiossa.
 - Template ei toimi yksinään, koska siinä ovat vain ne tiedostot, jotka se lisää coren päälle tai joilla se korvaa coren tiedoston.
-- Moduulien dokumentaatio tulee buildatun projektin mukana kansioon `dst/<template>/developmentFiles/docs/`.
+- Moduulien dokumentaatio tulee buildatun templaten mukana kansioon `dst/<template>/developmentFiles/docs/`.
 - [`src/images/`](src/images/README.md) sisältää coren ja templatejen kuvien SVG-lähdetiedostot sekä skriptin, joka tekee niistä pelien käyttämät PNG-kuvat. Ohjeet ovat kansion README:ssä, joka on englanniksi.
-- `dst/` on kansio, johon buildit tehdään. Se ei ole mukana versionhallinnassa.
+- `dst/<template>/` sisältää buildatun templaten.
 - `build.bat` ja `build.sh` ovat build-skriptit.
 
 ## Templatejen säännöt
@@ -67,7 +66,7 @@ Tee muutokset aina `src/`-kansioon. `dst/`-kansioon tehdyt muutokset katoavat se
 
 ## Uuden templaten lisääminen
 
-1. Luo kansio `src/templates/<nimi>/game/`. Siihen tulevat templaten projektitiedostot, myös kaikki tiedostot, jotka lisäät vaiheissa 2-5.
+1. Luo kansio `src/templates/<nimi>/game/`. Siihen tulevat templaten tiedostot, myös kaikki tiedostot, jotka lisäät vaiheissa 2-5.
 2. Lisää `data/settingsTemplate.lua`, jossa ovat templaten omat asetukset, esimerkiksi päävalikon napit ja kontrollit. Ne yhdistetään coren asetuksiin (`data/settingsCore.lua`) niin, että templaten arvot korvaavat coren arvot. Yhdistämisen säännöt ovat [coren README:ssä](src/core/game/README.md).
 3. Lisää `scenes/game.lua`, päävalikon taustakuva `assets/images/template/ui/menu.png` sekä templaten omat scenet, luokat, datatiedostot ja assetit. Jos template käyttää inventorya, sen esineet tulevat tiedostoon `data/items.lua`.
 4. Kopioi coren `data/credits.lua` templateen ja vaihda siihen templaten krediitit, myös ne, joita kolmansien osapuolten assetit vaativat. Säilytä tiedoston `config`-taulukko, koska krediittinäkymä ei toimi ilman sitä.

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Template Story</title>
+</head>
+<body>
+<tw-storydata name="Template Story" startnode="1" creator="Twine" creator-version="2.12.1" format="Weaver" format-version="2.0.0" ifid="A95B287A-202C-4A6A-AC1B-E6D308608E04" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="" position="100,100" size="100,100">You: This is the intro passage. A new game opens it once.
+You: The guide by the door wants to talk.</tw-passagedata><tw-passagedata pid="2" name="variables" tags="options" position="300,100" size="100,100">{ &quot;doorOpen&quot;: false }</tw-passagedata><tw-passagedata pid="3" name="guide" tags="" position="500,100" size="100,100">&lt;&lt;if $doorOpen&gt;&gt;
+Guide: The door is open. The doorOpen story flag unlocks its exit.
+&lt;&lt;else&gt;&gt;
+Guide: I am NPC 1. My door stays locked until the doorOpen flag is true.
+Guide: Bring me the parcel from the other map. Its exit is to the east.
+&lt;&lt;if $inventory.parcel&gt;&gt;
+
+[[Give the parcel|guideParcel]]
+[[Not yet|goodbye]]
+&lt;&lt;end&gt;&gt;
+&lt;&lt;end&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="guideParcel" tags="" position="700,100" size="100,100">&lt;&lt;removeItem, parcel&gt;&gt;
+&lt;&lt;addItem, key&gt;&gt;
+&lt;&lt;set $doorOpen = true&gt;&gt;
+Guide: Thanks. removeItem took the parcel and addItem gave you a key.
+Guide: The passage also set doorOpen to true, so the door opens now.</tw-passagedata><tw-passagedata pid="5" name="npc2" tags="" position="100,300" size="100,100">NPC 2: I am NPC 2. What I say depends on the inventory and the door flag.
+&lt;&lt;if $doorOpen == false&gt;&gt;
+NPC 2: The parcel lies south-east of here, at the end of the path.
+&lt;&lt;end&gt;&gt;
+&lt;&lt;if $inventory.parcel&gt;&gt;
+
+[[Ask about the parcel|npc2Parcel]]
+[[Goodbye|goodbye]]
+&lt;&lt;end&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="npc2Parcel" tags="" position="300,300" size="100,100">NPC 2: This option shows only while the parcel is in your inventory.
+NPC 2: Take it to the guide on the first map.</tw-passagedata><tw-passagedata pid="7" name="goodbye" tags="" position="500,300" size="100,100">You: Goodbye. Both NPCs link to this one passage.</tw-passagedata><tw-passagedata pid="8" name="signOutdoor1" tags="" position="700,300" size="100,100">Sign: A prop with the type sign and a node property opens that passage.</tw-passagedata><tw-passagedata pid="9" name="signIndoor1" tags="" position="100,500" size="100,100">Sign: This room is smaller than the screen, so the camera stays still.
+Sign: Indoor maps play the indoors track.</tw-passagedata><tw-passagedata pid="10" name="npcBackground" tags="" position="300,500" size="100,100">(either: &quot;NPC: An NPC without a node property opens this passage.&quot;, &quot;NPC: Each visit picks one line from the either list at random.&quot;)</tw-passagedata></tw-storydata>
+</body>
+</html>

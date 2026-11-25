@@ -1,5 +1,3 @@
-# Build output (regenerate with build.bat / build.sh):
-dst/
 # Per-developer launch parameters (see data/launchParams.example.json):
 launchParams.json
 # Local scratch/workspace files:

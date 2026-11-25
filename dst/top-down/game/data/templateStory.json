@@ -1,0 +1,43 @@
+[
+	{
+		"title": "intro",
+		"body": "You: This is the intro passage. A new game opens it once.\nYou: The guide by the door wants to talk."
+	},
+	{
+		"title": "variables",
+		"tags": "options",
+		"body": "{ \"doorOpen\": false }"
+	},
+	{
+		"title": "guide",
+		"body": "<<if $doorOpen>>\nGuide: The door is open. The doorOpen story flag unlocks its exit.\n<<else>>\nGuide: I am NPC 1. My door stays locked until the doorOpen flag is true.\nGuide: Bring me the parcel from the other map. Its exit is to the east.\n<<if $inventory.parcel>>\n\n[[Give the parcel|guideParcel]]\n[[Not yet|goodbye]]\n<<end>>\n<<end>>"
+	},
+	{
+		"title": "guideParcel",
+		"body": "<<removeItem, parcel>>\n<<addItem, key>>\n<<set $doorOpen = true>>\nGuide: Thanks. removeItem took the parcel and addItem gave you a key.\nGuide: The passage also set doorOpen to true, so the door opens now."
+	},
+	{
+		"title": "npc2",
+		"body": "NPC 2: I am NPC 2. What I say depends on the inventory and the door flag.\n<<if $doorOpen == false>>\nNPC 2: The parcel lies south-east of here, at the end of the path.\n<<end>>\n<<if $inventory.parcel>>\n\n[[Ask about the parcel|npc2Parcel]]\n[[Goodbye|goodbye]]\n<<end>>"
+	},
+	{
+		"title": "npc2Parcel",
+		"body": "NPC 2: This option shows only while the parcel is in your inventory.\nNPC 2: Take it to the guide on the first map."
+	},
+	{
+		"title": "goodbye",
+		"body": "You: Goodbye. Both NPCs link to this one passage."
+	},
+	{
+		"title": "signOutdoor1",
+		"body": "Sign: A prop with the type sign and a node property opens that passage."
+	},
+	{
+		"title": "signIndoor1",
+		"body": "Sign: This room is smaller than the screen, so the camera stays still.\nSign: Indoor maps play the indoors track."
+	},
+	{
+		"title": "npcBackground",
+		"body": "(either: \"NPC: An NPC without a node property opens this passage.\", \"NPC: Each visit picks one line from the either list at random.\")"
+	}
+]

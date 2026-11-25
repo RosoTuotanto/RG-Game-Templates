@@ -52,11 +52,12 @@ mkdir "%target%\game"
 mkdir "%target%\developmentFiles"
 
 rem Robocopy exit codes 0 to 7 mean success, 8 and above mean failure.
-robocopy "src\core\game" "%target%\game" /e /nfl /ndl /njh /njs >nul
+rem A developer's launchParams.json holds personal testing flags, so /xf keeps it out of every build.
+robocopy "src\core\game" "%target%\game" /e /xf launchParams.json /nfl /ndl /njh /njs >nul
 if errorlevel 8 goto :copyfail
 
 rem /is and /it make every template file replace the core file with the same name, even when robocopy classes the two as the same file.
-robocopy "%template%\game" "%target%\game" /e /is /it /nfl /ndl /njh /njs >nul
+robocopy "%template%\game" "%target%\game" /e /is /it /xf launchParams.json /nfl /ndl /njh /njs >nul
 if errorlevel 8 goto :copyfail
 
 robocopy "src\core\developmentFiles" "%target%\developmentFiles" /e /nfl /ndl /njh /njs >nul
