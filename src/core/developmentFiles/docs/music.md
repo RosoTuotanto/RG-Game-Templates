@@ -97,7 +97,7 @@ local scene = composer.newScene()
 
 function scene:show( event )
 	if event.phase == "did" then
-		music.play( "assets/audio/music/menuMusic.mp3" )
+		music.play( "assets/audio/template/music/menuMusic.mp3" )
 	end
 end
 

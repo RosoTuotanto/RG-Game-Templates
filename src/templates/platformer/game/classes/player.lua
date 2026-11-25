@@ -15,7 +15,7 @@ local animations = require( "data.animations" )
 local heroSettings = settings.platformer.hero
 local trampolineSettings = settings.platformer.trampoline
 
-local sfxJump = audio.loadSound( "assets/audio/sfx/jump.wav" )
+local sfxJump = audio.loadSound( "assets/audio/template/sfx/jump.wav" )
 
 local sheet = graphics.newImageSheet( animations.heroSheet.filename, animations.heroSheet.options )
 

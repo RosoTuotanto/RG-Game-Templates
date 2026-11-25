@@ -4,7 +4,7 @@ return {
 	-- The hero's image sheet: 8 columns and 5 rows of 96x96 frames. The rows are idle (4 frames),
 	-- run (8), jump (2), fall (2) and climb (4). The hero faces right and is mirrored to face left.
 	heroSheet = {
-		filename = "assets/images/characters/hero.png",
+		filename = "assets/images/template/characters/hero.png",
 
 		-- The row of pixels in a frame, counted from its top, where the hero's feet are. The physics body stands on it.
 		feetY = 96,
@@ -31,7 +31,7 @@ return {
 	-- The NPC's image sheet: 4 columns and 2 rows of 96x96 frames. The rows are idle (4 frames)
 	-- and raising an arm (4). She faces right and is mirrored to face left.
 	npcSheet = {
-		filename = "assets/images/characters/npc.png",
+		filename = "assets/images/template/characters/npc.png",
 
 		-- The row of pixels in a frame, counted from its top, where her feet are.
 		feetY = 96,

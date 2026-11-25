@@ -29,7 +29,7 @@ The script renders every SVG file and writes its PNG into `game/`, replacing the
 To build only some images, name their folders or files inside this folder:
 
 ```sh
-python3 src/images/build_images.py top-down core/assets/images/ui/slider.svg
+python3 src/images/build_images.py top-down core/assets/images/template/ui/slider.svg
 ```
 
 An image that fails is reported, and the others are still built. Run `build.bat` or `build.sh` afterwards to get the new images into `dst/`.

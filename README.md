@@ -38,7 +38,7 @@ Buildatussa projektissa on templaten lisäksi aina mukana core. Templaten oma `R
 
 1. Buildaa ryhmän valitsema template.
 2. Poista tiedosto `dst/<template>/game/data/launchParams.json`, jos se on olemassa. Siinä ovat omat testausasetuksesi. Build kopioi sen mukaan samalla tavalla kuin muutkin tiedostot.
-3. Kopioi `dst/<template>/game/`-kansion sisältö ryhmän repositorion `game`-kansioon. Templaten `README.md` korvaa kansiossa valmiina olevan `README.md`-tiedoston.
+3. Kopioi `dst/<template>/game/`-kansion sisältö ryhmän repositorion `game`-kansioon. Templaten `README.md` korvaa kansiossa valmiina olevan [RG-Project-Templaten](https://github.com/RosoTuotanto/RG-Project-Template) `README.md`-tiedoston.
 4. Kopioi `dst/<template>/developmentFiles/`-kansion sisältö ryhmän repositorion `developmentFiles`-kansioon. Uudet tiedostot ja kansiot tulevat valmiina olevien rinnalle, eikä mikään valmiina oleva tiedosto korvaudu.
 
 Tämän jälkeen ryhmän projekti on itsenäinen: tähän repositorioon tehty korjaus ei päivity ryhmän peliin.
@@ -61,7 +61,7 @@ Tee muutokset aina `src/`-kansioon. `dst/`-kansioon tehdyt muutokset katoavat se
 ## Templatejen säännöt
 
 1. Template toimii vain coren päällä. Älä kopioi coren tiedostoja templateen: silloin samasta tiedostosta on kaksi kopiota, jotka alkavat erota toisistaan.
-2. Sama tiedosto saa olla sekä coressa että templatessa vain silloin, kun templaten on tarkoitus korvata coren versio. Jokainen template korvaa nämä viisi tiedostoa, jotka kaikki ovat `game/`-kansiossa: `scenes/game.lua`, `data/settingsTemplate.lua`, `data/credits.lua`, `README.md` ja päävalikon taustakuva `assets/images/ui/menu.png`. Inventorya käyttävä template korvaa lisäksi tiedoston `data/items.lua`, jossa sen esineet luetellaan. Kaikki kolme templatea käyttävät inventorya.
+2. Sama tiedosto saa olla sekä coressa että templatessa vain silloin, kun templaten on tarkoitus korvata coren versio. Jokainen template korvaa nämä viisi tiedostoa, jotka kaikki ovat `game/`-kansiossa: `scenes/game.lua`, `data/settingsTemplate.lua`, `data/credits.lua`, `README.md` ja päävalikon taustakuva `assets/images/template/ui/menu.png`. Inventorya käyttävä template korvaa lisäksi tiedoston `data/items.lua`, jossa sen esineet luetellaan. Kaikki kolme templatea käyttävät inventorya. Lisäksi kansioiden `assets/images/template/` ja `assets/audio/template/` `license.txt` on sama tiedosto coressa ja jokaisessa templatessa.
 3. Oma koodi, joka ei kuulu vain yhteen pelityyppiin, kuuluu coreen, vaikka aluksi vain yksi template tarvitsisi sitä.
 4. Templaten äänet ja grafiikat sekä ne kolmansien osapuolten kirjastot, joita vain templatet käyttävät, ovat templaten omassa kansiossa. Jos kaksi templatea käyttää samaa tällaista kirjastoa, kummassakin on siitä oma kopio. Coren oman koodin käyttämät kirjastot, kuten Story Weaver, ovat coressa. Kaikkien templatejen käyttämä fontti on coren `assets/fonts/`-kansiossa. Fontti valitaan tiedostossa `data/settingsCore.lua`.
 
@@ -69,12 +69,18 @@ Tee muutokset aina `src/`-kansioon. `dst/`-kansioon tehdyt muutokset katoavat se
 
 1. Luo kansio `src/templates/<nimi>/game/`. Siihen tulevat templaten projektitiedostot, myös kaikki tiedostot, jotka lisäät vaiheissa 2-5.
 2. Lisää `data/settingsTemplate.lua`, jossa ovat templaten omat asetukset, esimerkiksi päävalikon napit ja kontrollit. Ne yhdistetään coren asetuksiin (`data/settingsCore.lua`) niin, että templaten arvot korvaavat coren arvot. Yhdistämisen säännöt ovat [coren README:ssä](src/core/game/README.md).
-3. Lisää `scenes/game.lua`, päävalikon taustakuva `assets/images/ui/menu.png` sekä templaten omat scenet, luokat, datatiedostot ja assetit. Jos template käyttää inventorya, sen esineet tulevat tiedostoon `data/items.lua`.
+3. Lisää `scenes/game.lua`, päävalikon taustakuva `assets/images/template/ui/menu.png` sekä templaten omat scenet, luokat, datatiedostot ja assetit. Jos template käyttää inventorya, sen esineet tulevat tiedostoon `data/items.lua`.
 4. Kopioi coren `data/credits.lua` templateen ja vaihda siihen templaten krediitit, myös ne, joita kolmansien osapuolten assetit vaativat. Säilytä tiedoston `config`-taulukko, koska krediittinäkymä ei toimi ilman sitä.
 5. Lisää kansioon `src/templates/<nimi>/game/` tiedosto `README.md`, joka on templaten ohje ryhmille.
 6. Kirjoita templaten omien moduulien dokumentaatio kansioon `src/templates/<nimi>/developmentFiles/docs/`.
 7. Lisää template kummankin build-skriptin valikkoon ja vaihtoehtoon `1` (kaikki templatet). Templatejen nimet on kirjoitettu suoraan kumpaankin skriptiin. Exit-vaihtoehdon numero kasvaa samalla yhdellä, joten päivitä myös `build.bat`:n `choice`-rivi ja `errorlevel`-tarkistukset sekä tämän README:n numerot.
 8. Buildaa template ja testaa se Solar2D-simulaattorissa. Tarkista lopuksi, että template korvaa coren tiedostoista vain säännössä 2 luetellut tiedostot.
+
+## Muut Roso Games -materiaalit
+
+- [RG-Project-Template](https://github.com/RosoTuotanto/RG-Project-Template): pohja, josta jokaisen ryhmän GitHub-repositorio luodaan.
+- [RG-Learning-Materials](https://github.com/RosoTuotanto/RG-Learning-Materials): kurssien kotitehtävät vastauksineen ja opetuspelien lähdekoodit kehitysvaiheittain. Opetuspelit ja demot, kuten demo [Mitä Roso Games Templateista voisi tehdä?](https://rosotuotanto.github.io/RG-Learning-Materials/demos/template-showcase/), ovat pelattavissa selaimessa [oppimateriaalien verkkosivustolla](https://rosotuotanto.github.io/RG-Learning-Materials/).
+- [Oppimisympäristö](https://www.rosogames.fi/opetus): Roso Gamesin kurssit ja oppitunnit.
 
 ## Tekijä
 
@@ -86,4 +92,4 @@ Templatet on tehty Roso-tuotannon Roso Games -projekteja varten.
 
 [MIT](LICENSE)
 
-Roso Gamesia varten kirjoitetun koodin tekijänoikeudet kuuluvat Eetu Rantaselle ja Roso Gamesille (Kukunori ry). Muualta tulevat kirjastot, fontit, grafiikat ja äänet sekä niiden lisenssit on lueteltu [NOTICE.md](NOTICE.md)-tiedostossa.
+Roso Gamesia varten kirjoitetun koodin tekijänoikeudet kuuluvat Eetu Rantaselle ja Roso Gamesille (Kukunori ry). Muualta tulevat kirjastot, fontit, grafiikat ja äänet sekä niiden lisenssit on lueteltu [NOTICE.md](NOTICE.md)-tiedostossa. Roso Games -ryhmien omat peliprojektit ja niiden koodi eivät ole MIT-lisensoituja: ne kuuluvat ryhmille ja ovat vain ryhmien omassa käytössä.

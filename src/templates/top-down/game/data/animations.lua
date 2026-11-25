@@ -7,7 +7,7 @@ return {
 	-- The hero's image sheet: 5 columns and 3 rows of 64x96 frames. The rows face south, north
 	-- and west. Column 1 is the idle frame and columns 2 to 5 are the walk loop.
 	heroSheet = {
-		filename = "assets/images/characters/hero.png",
+		filename = "assets/images/template/characters/hero.png",
 
 		-- The row of pixels in a frame, counted from its top, where the middle of the hero's feet is.
 		-- The hero's position and physics body sit on this row, so the hero sorts and collides by its feet.

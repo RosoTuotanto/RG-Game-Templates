@@ -57,7 +57,7 @@ A `<<...>>` line that is not one of Weaver's own commands is passed to the game 
 | --- | --- | --- |
 | `<<character, show, name, expression, position>>` | Shows a character, or changes the expression or position of one on screen | `<<character, show, template-male, default, left>>` |
 | `<<character, hide, name>>` | Fades a character out | `<<character, hide, template-male>>` |
-| `<<img, "path">>` | Shows a background image, as a path from the `game/` folder, in place of the one on screen | `<<img, "assets/images/backgrounds/indoor.png">>` |
+| `<<img, "path">>` | Shows a background image, as a path from the `game/` folder, in place of the one on screen | `<<img, "assets/images/template/backgrounds/indoor.png">>` |
 | `<<del background>>` | Removes the background image | Not used in the sample story |
 | `<<minigame, name>>` | Runs a minigame round and continues the passage when it ends | `<<minigame, targetPractice>>` |
 | `<<addItem, id>>` | Puts the item with that id from `game/data/items.lua` in the first free slot of the inventory. Nothing is added when every slot is full. | `<<addItem, badge>>` |
@@ -82,7 +82,7 @@ A `<<...>>` line that is not one of Weaver's own commands is passed to the game 
 
 ### Characters
 
-- A character image is `game/assets/images/characters/<name>-<expression>.png`, so `<<character, show, template-female, excited>>` shows `template-female-excited.png`. Every expression a passage names needs its file, or the game stops with a Lua error in `game.lua`.
+- A character image is `<name>-<expression>.png` in the folder that `visualNovel.characters.folder` names, which is `game/assets/images/template/characters/` in the template, so `<<character, show, template-female, excited>>` shows `template-female-excited.png`. Every expression a passage names needs its file, or the game stops with a Lua error in `game.lua`.
 - Every character image is drawn 520 content units tall, out of the 640 content units of the screen's height (`visualNovel.characters.height`).
 - The drawn width comes from `imageWidth` and `imageHeight`, 720 and 1080 now, which match the sample images of 720 x 1080 pixels. Give all character images that shape, or set the two keys to the size of your own images.
 - The bottom edge of the image stands on the bottom edge of the screen, and its horizontal centre is on the character's position. Draw all images of one character on the same canvas with the same framing, so an expression swap does not make the character jump.

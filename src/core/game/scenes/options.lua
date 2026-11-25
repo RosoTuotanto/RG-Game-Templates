@@ -42,7 +42,7 @@ local sliderSheetOptions = {
 	sheetContentWidth = 96,
 	sheetContentHeight = 32,
 }
-local sliderSheet = graphics.newImageSheet( "assets/images/ui/slider.png", sliderSheetOptions )
+local sliderSheet = graphics.newImageSheet( "assets/images/template/ui/slider.png", sliderSheetOptions )
 
 -- The fullscreen checkbox off, then on.
 local toggleSheetOptions = {
@@ -52,7 +52,7 @@ local toggleSheetOptions = {
 	sheetContentWidth = 128,
 	sheetContentHeight = 32,
 }
-local toggleSheet = graphics.newImageSheet( "assets/images/ui/toggle.png", toggleSheetOptions )
+local toggleSheet = graphics.newImageSheet( "assets/images/template/ui/toggle.png", toggleSheetOptions )
 
 ---------------------------------------------------------------------------
 

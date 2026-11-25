@@ -6,7 +6,7 @@
 	},
 	{
 		"title": "start",
-		"body": "<<img, \"assets/images/backgrounds/outdoor.png\">>\n<<character, show, template-male>>\nA character enters the scene with a short slide and fade.\n[[Continue|expression]]"
+		"body": "<<img, \"assets/images/template/backgrounds/outdoor.png\">>\n<<character, show, template-male>>\nA character enters the scene with a short slide and fade.\n[[Continue|expression]]"
 	},
 	{
 		"title": "expression",
@@ -14,7 +14,7 @@
 	},
 	{
 		"title": "indoors",
-		"body": "<<img, \"assets/images/backgrounds/indoor.png\">>\n<<character, show, template-male, default, left>>\nThe background changes to a second location.\nThe character moves to the left side of the screen.\n[[Continue|secondCharacter]]"
+		"body": "<<img, \"assets/images/template/backgrounds/indoor.png\">>\n<<character, show, template-male, default, left>>\nThe background changes to a second location.\nThe character moves to the left side of the screen.\n[[Continue|secondCharacter]]"
 	},
 	{
 		"title": "secondCharacter",

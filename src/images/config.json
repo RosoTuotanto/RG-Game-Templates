@@ -12,8 +12,8 @@
 	},
 
 	"opaque": [
-		"visual-novel/assets/images/backgrounds/indoor.svg",
-		"visual-novel/assets/images/backgrounds/outdoor.svg"
+		"visual-novel/assets/images/template/backgrounds/indoor.svg",
+		"visual-novel/assets/images/template/backgrounds/outdoor.svg"
 	],
 
 	"tilesets": {

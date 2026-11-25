@@ -481,7 +481,7 @@ function scene:create( event )
 		mapName = sceneParams.mapName
 	end
 
-	interactSound = audio.loadSound( "assets/audio/sfx/interact.wav" )
+	interactSound = audio.loadSound( "assets/audio/template/sfx/interact.wav" )
 
 	-- Start physics before building the map, because the map's physics layer creates the
 	-- walls' physics bodies as soon as the map is built. A top-down game has no gravity,

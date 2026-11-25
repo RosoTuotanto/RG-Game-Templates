@@ -2,7 +2,7 @@
 
 A Solar2D game project base by Roso Games. Core gives every template a working game skeleton: a launch screen, a main menu, an options screen with audio settings and rebindable controls, a save/load system with slots and screenshots, background music with fades, a fade-to-black scene transition, an in-game Menu button and pause menu, an inventory, a dialogue window for Story Weaver stories, a keyboard controls tooltip, and a set of utility libraries. Your game goes into `scenes/game.lua`; the rest is ready.
 
-This template is licensed under the MIT License, Copyright (c) 2025-2026 Eetu Rantanen and Roso Games (Kukunori ry). Third-party components keep their own licences, in the licence files shipped beside them.
+This template is licensed under the MIT License, Copyright (c) 2025-2026 Eetu Rantanen and Roso Games (Kukunori ry). The game a Roso Games group builds on it is the group's own: its code is not covered by this licence and stays in the group's own use. Third-party components keep their own licences, in the licence files shipped beside them.
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ A template replaces at least `scenes/game.lua`, `data/settingsTemplate.lua`, `da
 
 `game/` holds everything that ships with the game:
 
-- `assets/` - images, audio, and fonts. Each font family has its own folder under `assets/fonts/` with its licence file beside the font files.
+- `assets/` - images, audio, and fonts. The placeholder images and audio that come with the template are in `assets/images/template/` and `assets/audio/template/`, so your own files go in your own folders beside them.
 - `classes/` - reusable modules with state (screen, loadsave, saveManager, music, transitionOverlay, camera, controls, inventory, dialogue).
 - `data/` - configuration and data files (settings, credits, items).
 - `libs/` - libraries and bootstrap code (initGame, settings, launchParams, utils, audioHandles, spyricStoryWeaver).
@@ -107,7 +107,7 @@ The menu's buttons are defined by `settings.menu.buttons`:
 - Credits opens the scrolling credits from `data/credits.lua`. The text fades out when the scroll reaches its end, and touching the credits brings it back. `endFadeTime` in `data/credits.lua` sets the fade's length; `0` keeps the text visible.
 - Exit quits the game. The Exit button hides itself on HTML5, where quitting is not supported.
 
-The menu, load and credits scenes share the background from `widgets/menuBackground.lua`. It covers the screen from the image's top left corner and pans slowly, so keep the important part of `assets/images/ui/menu.png` near its top left corner. Core has a plain `menu.png`, and each template replaces it with its own at the same path.
+The menu, load and credits scenes share the background from `widgets/menuBackground.lua`. It covers the screen from the image's top left corner and pans slowly, so keep the important part of `assets/images/template/ui/menu.png` near its top left corner. Core has a plain `menu.png`, and each template replaces it with its own at the same path.
 
 Going to the scene that is already showing runs its hide and show events again but keeps its view, so `create` does not run and the scene is not rebuilt. `scenes/refresh.lua` rebuilds a scene from scratch: go to `scenes.refresh` and it removes the scene you came from and enters it again with the params you passed. Loading a save while the game is running goes through it.
 

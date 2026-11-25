@@ -21,7 +21,7 @@ return {
 	inventory = {
 		-- The image sheet the item icons come from, by the frame data/items.lua gives each item.
 		itemSheet = {
-			filename = "assets/images/items.png",
+			filename = "assets/images/template/items.png",
 			frameWidth = 64,
 			frameHeight = 64,
 			frameCount = 1,
@@ -45,7 +45,7 @@ return {
 		startPassage = "start",
 
 		-- Music that plays while the story is on screen. The menu brings back its own music.
-		music = "assets/audio/music/story.mp3",
+		music = "assets/audio/template/music/story.mp3",
 
 		-- Backgrounds are drawn at this size, then scaled to cover the screen and centred.
 		background = {
@@ -70,7 +70,7 @@ return {
 
 		characters = {
 			-- A character image is <folder><name>-<expression>.png.
-			folder = "assets/images/characters/",
+			folder = "assets/images/template/characters/",
 
 			-- The size the character images are drawn at; the on-screen height keeps their shape.
 			imageWidth = 720,
@@ -138,8 +138,8 @@ return {
 				-- Milliseconds the hit image takes to fade out.
 				hitFadeTime = 250,
 
-				targetImage = "assets/images/minigame/target.png",
-				hitImage = "assets/images/minigame/target-hit.png",
+				targetImage = "assets/images/template/minigame/target.png",
+				hitImage = "assets/images/template/minigame/target-hit.png",
 				targetSize = 96,
 
 				-- The closest a target's centre comes to the screen's sides and bottom, and to its top, which leaves room for the counters and the Menu button.

@@ -29,4 +29,4 @@ The parts listed below come from other projects and keep their own licence and c
 
 ## Art and music
 
-The placeholder art and music of the templates are works by Eetu Rantanen made for the templates and released under CC0.
+The placeholder art and music of the templates are works by Eetu Rantanen made for the templates and released under CC0. Their licence files are the `license.txt` files in the `assets/images/template/`, `assets/audio/template/` and map folders.

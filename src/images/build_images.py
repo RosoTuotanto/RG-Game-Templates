@@ -347,7 +347,7 @@ def take_lock() -> None:
 
 def main() -> None:
 	parser = argparse.ArgumentParser(description=__doc__)
-	parser.add_argument("paths", nargs="*", help="folders or SVG files in this folder to build, such as top-down or core/assets/images/ui/slider.svg (default: every SVG file)")
+	parser.add_argument("paths", nargs="*", help="folders or SVG files in this folder to build, such as top-down or core/assets/images/template/ui/slider.svg (default: every SVG file)")
 	arguments = parser.parse_args()
 
 	if not Path("/proc").is_dir():

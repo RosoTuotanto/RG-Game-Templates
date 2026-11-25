@@ -1,6 +1,6 @@
 # UI images
 
-Core's options screen, in-game Menu button and inventory button are drawn from image sheets in `game/assets/images/ui/`. To restyle them, replace the images and keep each frame's size and order, or change the sheet options listed below to match a new layout. General information about the project is in the [README](../../game/README.md).
+Core's options screen, in-game Menu button and inventory button are drawn from image sheets in `game/assets/images/template/ui/`. To restyle them, add your own images in a folder of your own and point the file names at them: `menuButton.filename`, `inventoryButton.filename` and `menu.background.filename` in the settings, and the two sheet file names in `game/scenes/options.lua`. Keep each frame's size and order, or change the sheet options listed below to match a new layout. General information about the project is in the [README](../../game/README.md).
 
 ## slider.png
 

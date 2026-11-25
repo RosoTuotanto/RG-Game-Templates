@@ -61,12 +61,13 @@ The story's passages, which you can delete when you write your own story, except
 
 ## Starting your own game
 
+- Template assets: the placeholder images and audio are in `assets/images/template/` and `assets/audio/template/`, and each folder's `license.txt` covers only the files in it. Put your own images and audio in your own folders under `assets/`, point the settings below at them, and delete a template file once nothing uses it.
 - Maps: delete `maps/outdoor1.json`, `outdoor2.json` and `indoor1.json`, make your own in Tiled ([maps.md](../developmentFiles/docs/maps.md)), and set `topDown.startMap`, `topDown.music` and `topDown.mapBackground` to the new map names.
 - Map art: replace `maps/tileset.png`, `maps/characters.png`, `maps/items.png` and the images in `maps/props/`, keeping the frame sizes in `data/animations.lua` and `inventory.itemSheet` in step with the new images.
-- Hero: replace `assets/images/characters/hero.png`. Its layout (5 columns and 3 rows of 64 x 96 pixel frames, rows facing south, north and west) and the row of the hero's feet are in `heroSheet` in `data/animations.lua`.
+- Hero: add your own image sheet and set `heroSheet.filename` in `data/animations.lua` to it. The sheet's layout (5 columns and 3 rows of 64 x 96 pixel frames, rows facing south, north and west) and the row of the hero's feet are in `heroSheet` too.
 - Story: replace `data/templateStory.json` and its Twine source with your own story, or point `story.source` at a new file, and keep an `intro` passage and an `npcBackground` passage or rename them in `story`. [dialogue.md](../developmentFiles/docs/dialogue.md) covers the story file.
 - Items: replace the entries in `data/items.lua` and the ids in `inventory.startingItems`. [inventory.md](../developmentFiles/docs/inventory.md) covers adding an item.
-- Music and sounds: replace `assets/audio/music/outdoors.mp3`, `indoors.mp3` and `assets/audio/sfx/interact.wav`, or add new files and name them in `topDown.music`.
+- Music and sounds: add your own music files and name them in `topDown.music`. The interact sound's file name is in `scenes/game.lua`.
 - Credits: fill in `data/credits.lua` with your group's names and the third-party assets your game uses.
 
 ## Documentation
@@ -77,22 +78,9 @@ The docs are in `developmentFiles/docs/`, beside this `game/` folder.
 - [dialogue.md](../developmentFiles/docs/dialogue.md), [inventory.md](../developmentFiles/docs/inventory.md), [hints.md](../developmentFiles/docs/hints.md), [camera.md](../developmentFiles/docs/camera.md), [music.md](../developmentFiles/docs/music.md), [saving.md](../developmentFiles/docs/saving.md) and [transitionOverlay.md](../developmentFiles/docs/transitionOverlay.md): the core modules the game scene uses.
 - [ui.md](../developmentFiles/docs/ui.md): the images of the Menu button and the options screen.
 
-## Credits and licences
-
-Assets:
-
-- The placeholder art of the maps, characters, items and props was made for the templates by Eetu Rantanen and is released under CC0.
-- The outdoor and indoor music were made for the templates by Eetu Rantanen and are released under CC0. The interact sound was made for this project.
-- The menu music and the click sound were made for the templates by Eetu Rantanen and are released under CC0. Their notice is in `assets/audio/LICENSE.txt`.
-- The fonts in `assets/fonts/` are under the SIL Open Font License, in the `OFL.txt` file in each font's folder.
-
-Libraries:
-
-- Spyric Story Weaver (`libs/spyricStoryWeaver.lua`) is licensed under the MIT License, as its header states.
-- PonyTiled (`com/ponywolf/ponytiled.lua`) loads the Tiled maps, and `com/coronalabs/xml.lua` is the XML parser it uses for external tilesets. PonyTiled's MIT licence is in `com/ponywolf/LICENSE`.
-
 ## License
 
-This template is licensed under the MIT License, Copyright (c) 2025-2026 Eetu Rantanen and Roso Games (Kukunori ry).
+This template is licensed under the MIT License, Copyright (c) 2025-2026 Eetu Rantanen and Roso Games (Kukunori ry). The game a Roso Games group builds on it is the group's own: its code is not covered by this licence and stays in the group's own use.
 
-Third-party components included in this project keep their own licences, as stated in [Credits and licences](#credits-and-licences).
+- PonyTiled (`com/ponywolf/ponytiled.lua`) is licensed under the MIT License, in `com/ponywolf/LICENSE`.
+- Spyric Story Weaver (`libs/spyricStoryWeaver.lua`) is licensed under the MIT License, as its header states.

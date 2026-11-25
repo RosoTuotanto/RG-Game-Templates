@@ -1,8 +1,0 @@
-Sound effects license
-
-The following sound effects were created by Eetu Rantanen using Audacity and Bfxr:
-
-    hurt.wav
-    jump.wav
-
-They are part of this project and are licensed under its MIT License.

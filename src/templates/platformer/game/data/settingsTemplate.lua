@@ -95,15 +95,15 @@ return {
 		-- sideways and moves at parallax times the camera's speed: 0 stays still, 1 moves with the map.
 		-- NOTE: This is a list, so a project must restate the full list.
 		backdrop = {
-			{ filename = "assets/images/backgrounds/backdrop-far.png", width = 1024, height = 640, parallax = 0.2 },
-			{ filename = "assets/images/backgrounds/backdrop-near.png", width = 1024, height = 640, parallax = 0.5 },
+			{ filename = "assets/images/template/backgrounds/backdrop-far.png", width = 1024, height = 640, parallax = 0.2 },
+			{ filename = "assets/images/template/backgrounds/backdrop-near.png", width = 1024, height = 640, parallax = 0.5 },
 		},
 
 		-- The music file each area plays, by area name. Areas that share a file keep the music playing between them.
 		music = {
-			outdoor = "assets/audio/music/outdoors.mp3",
-			indoor = "assets/audio/music/indoors.mp3",
-			room = "assets/audio/music/indoors.mp3",
+			outdoor = "assets/audio/template/music/outdoors.mp3",
+			indoor = "assets/audio/template/music/indoors.mp3",
+			room = "assets/audio/template/music/indoors.mp3",
 		},
 
 		-- The areas drawn without the backdrop, by area name, such as room = true. The screen around
@@ -162,7 +162,7 @@ return {
 	inventory = {
 		-- The image sheet the item icons come from. The map's item objects draw from it too, by their frame property.
 		itemSheet = {
-			filename = "assets/images/items.png",
+			filename = "assets/images/template/items.png",
 			frameWidth = 64,
 			frameHeight = 64,
 			frameCount = 1,

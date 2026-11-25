@@ -71,14 +71,15 @@ The `platformer` block holds the settings of the platformer game. The values bel
 
 ## Starting your own game
 
+- Template assets: the placeholder images and audio are in `assets/images/template/` and `assets/audio/template/`, and each folder's `license.txt` covers only the files in it. Put your own images and audio in your own folders under `assets/`, point the settings below at them, and delete a template file once nothing uses it.
 - Maps: delete `assets/maps/outdoor.json`, `indoor.json` and `room.json`, make your own areas in Tiled ([maps.md](../developmentFiles/docs/maps.md)), and set `platformer.startArea`, `platformer.startSpawn`, `platformer.music` and `platformer.noBackdrop` to the new names.
 - Tileset: replace `assets/maps/tileset.png`. A new image with another tile size, margin or spacing needs the same values in the tileset of every map, and the rope, trampoline and spike tiles need their properties in the new tileset ([maps.md](../developmentFiles/docs/maps.md#tiles-with-behaviour)).
-- Hero: replace `assets/images/characters/hero.png` and update `heroSheet` and `heroSequences` in `data/animations.lua` to match it: the frame size, the row of the feet (`feetY`) and the frames of each animation. Size the physics body in `platformer.hero.body` to the new character.
-- Characters: replace `assets/images/characters/npc.png` and update `npcSheet` and `npcSequences` in `data/animations.lua`. `classes/npc.lua` plays the sequences by the names `idle`, `raise` and `lower`, so keep those three.
-- Items: list your own items in `data/items.lua`, replace `assets/images/items.png`, and set `inventory.itemSheet` to the frame size and frame count of the new image ([inventory.md](../developmentFiles/docs/inventory.md)).
+- Hero: add your own image sheet, set `heroSheet.filename` in `data/animations.lua` to it, and update `heroSheet` and `heroSequences` to match it: the frame size, the row of the feet (`feetY`) and the frames of each animation. Size the physics body in `platformer.hero.body` to the new character.
+- Characters: add your own image sheet, set `npcSheet.filename` in `data/animations.lua` to it, and update `npcSheet` and `npcSequences`. `classes/npc.lua` plays the sequences by the names `idle`, `raise` and `lower`, so keep those three.
+- Items: list your own items in `data/items.lua`, add your own image sheet, and set `inventory.itemSheet` to its file name, frame size and frame count ([inventory.md](../developmentFiles/docs/inventory.md)).
 - Story: write your own passages in Twine and replace `data/templateStory.json` and its Twine source, as [story.md](../developmentFiles/docs/story.md) describes. Keep the `variables` passage and delete the sample passages.
-- Backdrops: replace `assets/images/backgrounds/backdrop-far.png` and `backdrop-near.png`, or list your own images in `platformer.backdrop`.
-- Music and sounds: replace `assets/audio/music/outdoors.mp3`, `indoors.mp3`, `assets/audio/sfx/jump.wav` and `hurt.wav`, or add new music files and name them in `platformer.music`. The sound file names are in `classes/player.lua` (jump) and `scenes/game.lua` (hurt).
+- Backdrops: add your own images and list them in `platformer.backdrop`.
+- Music and sounds: add your own music files and name them in `platformer.music`. The sound file names are in `classes/player.lua` (jump) and `scenes/game.lua` (hurt).
 - Credits: fill in `data/credits.lua` with your group's names and the third-party assets your game uses.
 
 ## Documentation
@@ -90,23 +91,9 @@ The docs are in `developmentFiles/docs/`, beside this `game/` folder.
 - [inventory.md](../developmentFiles/docs/inventory.md), [dialogue.md](../developmentFiles/docs/dialogue.md) and [hints.md](../developmentFiles/docs/hints.md): the core's inventory and its panel, the dialogue window and the keyboard controls tooltip.
 - [camera.md](../developmentFiles/docs/camera.md), [music.md](../developmentFiles/docs/music.md), [saving.md](../developmentFiles/docs/saving.md) and [transitionOverlay.md](../developmentFiles/docs/transitionOverlay.md): the core modules the game scene uses.
 
-## Credits and licences
-
-Assets:
-
-- The placeholder art of the maps, the hero, the character, the item and the backdrops was made for the templates by Eetu Rantanen and is released under CC0.
-- The outdoor and indoor music were made for the templates by Eetu Rantanen and are released under CC0.
-- The jump and hurt sounds are by Eetu Rantanen. Their notice is in `assets/audio/sfx/LICENSE.txt`.
-- The menu music and the click sound were made for the templates by Eetu Rantanen and are released under CC0. Their notice is in `assets/audio/LICENSE.txt`.
-- The fonts in `assets/fonts/` are under the SIL Open Font License, in the `OFL.txt` file in each font's folder.
-
-Libraries:
-
-- PonyTiled (`com/ponywolf/ponytiled.lua`) loads the Tiled maps, and `com/coronalabs/xml.lua` is the XML parser it uses for external tilesets. PonyTiled's MIT licence is in `com/ponywolf/LICENSE`.
-- Spyric Story Weaver (`libs/spyricStoryWeaver.lua`) plays the story. It is licensed under the MIT License, as its header states.
-
 ## License
 
-This template is licensed under the MIT License, Copyright (c) 2025-2026 Eetu Rantanen and Roso Games (Kukunori ry).
+This template is licensed under the MIT License, Copyright (c) 2025-2026 Eetu Rantanen and Roso Games (Kukunori ry). The game a Roso Games group builds on it is the group's own: its code is not covered by this licence and stays in the group's own use.
 
-Third-party components included in this project keep their own licences, as stated in [Credits and licences](#credits-and-licences).
+- PonyTiled (`com/ponywolf/ponytiled.lua`) is licensed under the MIT License, in `com/ponywolf/LICENSE`.
+- Spyric Story Weaver (`libs/spyricStoryWeaver.lua`) is licensed under the MIT License, as its header states.

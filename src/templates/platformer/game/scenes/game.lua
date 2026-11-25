@@ -641,7 +641,7 @@ function scene:create( event )
 	end
 
 	isFading = true
-	sfxHurt = audio.loadSound( "assets/audio/sfx/hurt.wav" )
+	sfxHurt = audio.loadSound( "assets/audio/template/sfx/hurt.wav" )
 
 	-- Start physics before building the map, because PonyTiled creates the bodies of the collision objects
 	-- and the rope and trampoline tiles as soon as the map is built.

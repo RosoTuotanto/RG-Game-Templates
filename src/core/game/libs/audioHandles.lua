@@ -6,7 +6,7 @@ local audioHandles = {}
 -------------------------------------------------------------------------
 -- Handles
 
-audioHandles.click = audio.loadSound( "assets/audio/sfx/click.wav" )
+audioHandles.click = audio.loadSound( "assets/audio/template/sfx/click.wav" )
 
 -------------------------------------------------------------------------
 

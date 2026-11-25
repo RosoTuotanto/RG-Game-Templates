@@ -51,9 +51,9 @@ return {
 
 		-- The music file each map plays, by map name.
 		music = {
-			outdoor1 = "assets/audio/music/outdoors.mp3",
-			outdoor2 = "assets/audio/music/outdoors.mp3",
-			indoor1 = "assets/audio/music/indoors.mp3",
+			outdoor1 = "assets/audio/template/music/outdoors.mp3",
+			outdoor2 = "assets/audio/template/music/outdoors.mp3",
+			indoor1 = "assets/audio/template/music/indoors.mp3",
 		},
 
 		-- The colour, as red, green and blue from 0 to 1, that fills the screen behind a map

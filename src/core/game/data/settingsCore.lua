@@ -80,11 +80,11 @@ return {
 		playScene = "game",
 
 		-- Music that plays in the menu. It keeps playing in the load, options and credits scenes, and fades out when Play or a save slot starts the game.
-		music = "assets/audio/music/menuMusic.mp3",
+		music = "assets/audio/template/music/menuMusic.mp3",
 
 		-- Background image of the menu, credits and load scenes (widgets/menuBackground.lua).
 		background = {
-			filename = "assets/images/ui/menu.png",
+			filename = "assets/images/template/ui/menu.png",
 
 			-- How far, in content units, the image extends past the screen's top and left edges at rest. The pan moves it up to this far from there; 0 keeps it still.
 			panSlack = 20,
@@ -148,7 +148,7 @@ return {
 
 	menuButton = {
 		-- Two frames side by side: the button as it is drawn normally, then while it is pressed.
-		filename = "assets/images/ui/menuButton.png",
+		filename = "assets/images/template/ui/menuButton.png",
 		frameWidth = 128,
 		frameHeight = 48,
 
@@ -163,7 +163,7 @@ return {
 
 	inventoryButton = {
 		-- Two frames side by side: the button as it is drawn normally, then while it is pressed.
-		filename = "assets/images/ui/inventoryButton.png",
+		filename = "assets/images/template/ui/inventoryButton.png",
 		frameWidth = 64,
 		frameHeight = 64,
 

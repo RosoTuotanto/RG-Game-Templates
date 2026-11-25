@@ -69,13 +69,14 @@ The story is `data/templateStory.json`, and its Twine source is `developmentFile
 
 ## Starting your own game
 
+- Template assets: the placeholder images and audio are in `assets/images/template/` and `assets/audio/template/`, and each folder's `license.txt` covers only the files in it. Put your own images and audio in your own folders under `assets/`, point the settings below at them, and delete a template file once nothing uses it.
 - Story: write your own passages in Twine and replace `data/templateStory.json` and its Twine source, as [story.md](../developmentFiles/docs/story.md) describes. Keep the `variables` passage and a passage named as `visualNovel.startPassage`, and delete the sample passages.
-- Characters: delete the four `template-*.png` files in `assets/images/characters/` and add your own as `<name>-<expression>.png`. If your images are not 720 x 1080 pixels, set `visualNovel.characters.imageWidth` and `imageHeight` to their size.
-- Backgrounds: delete `assets/images/backgrounds/indoor.png` and `outdoor.png` and add your own. If they are not 1920 x 1080 pixels, set `visualNovel.background` to their size.
-- Items: list your own items in `data/items.lua`, replace `assets/images/items.png`, and set `inventory.itemSheet` to the frame size and frame count of the new image ([inventory.md](../developmentFiles/docs/inventory.md)).
+- Characters: add your own images as `<name>-<expression>.png` in a folder of your own and set `visualNovel.characters.folder` to it. If your images are not 720 x 1080 pixels, set `visualNovel.characters.imageWidth` and `imageHeight` to their size.
+- Backgrounds: add your own images and show them with `<<img>>` in your story. If they are not 1920 x 1080 pixels, set `visualNovel.background` to their size.
+- Items: list your own items in `data/items.lua`, add your own image sheet, and set `inventory.itemSheet` to its file name, frame size and frame count ([inventory.md](../developmentFiles/docs/inventory.md)).
 - Money: set the starting amount of `money` in the `variables` passage.
-- Minigame: delete `classes/minigames/targetPractice.lua`, `assets/images/minigame/`, `visualNovel.minigames.targetPractice` and the `targetHits` and `targetGoalReached` variables, or keep the module as a model for your own minigame.
-- Music: replace `assets/audio/music/story.mp3`, or add a new file and name it in `visualNovel.music`.
+- Minigame: delete `classes/minigames/targetPractice.lua`, `assets/images/template/minigame/`, `visualNovel.minigames.targetPractice` and the `targetHits` and `targetGoalReached` variables, or keep the module as a model for your own minigame.
+- Music: add your own file and name it in `visualNovel.music`.
 - Credits: fill in `data/credits.lua` with your group's names and the third-party assets your game uses.
 
 ## Documentation
@@ -88,6 +89,6 @@ The docs are in `developmentFiles/docs/`, beside this `game/` folder.
 
 ## License
 
-This template is licensed under the MIT License, Copyright (c) 2025-2026 Eetu Rantanen and Roso Games (Kukunori ry).
+This template is licensed under the MIT License, Copyright (c) 2025-2026 Eetu Rantanen and Roso Games (Kukunori ry). The game a Roso Games group builds on it is the group's own: its code is not covered by this licence and stays in the group's own use.
 
-Third-party components keep their own licenses: the fonts in `assets/fonts/` are licensed under the SIL Open Font License, in the `OFL.txt` file in each font's folder, and the Spyric Story Weaver story engine is licensed under the MIT License, as its header states. The placeholder art, the menu and story music and the UI click sound were made for the templates by Eetu Rantanen and are released under CC0 (`assets/audio/LICENSE.txt`). The bundled Spyric Story Weaver is an old pre-release included for learning purposes, and projects outside this template should use the current Weaver.
+Spyric Story Weaver (`libs/spyricStoryWeaver.lua`) is licensed under the MIT License, as its header states. The bundled Spyric Story Weaver is an old pre-release included for learning purposes, and projects outside this template should use the current Weaver.
